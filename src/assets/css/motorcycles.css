@@ -1,0 +1,101 @@
+#card11{
+    width: 3 px;
+    height:100%;
+    border-radius: 10px;
+    border: 1px solid   rgb(218, 218, 218);
+    background-color: #FFFFFF;
+    /* box-shadow: 4px 7px 16px 0px #e1e1e1; */
+    box-shadow: 3px 5px 10px 0px #e1e1e1;
+    cursor: pointer;
+}
+
+#cd1{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+#carsale1{
+    margin-top: 3%;
+    text-align: center;
+    margin-left: 1%;
+    /* color: black; */
+    /* color: #FFDA00; */
+    color: #D7DF23;
+    font-weight: 600;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+#carname1{
+    margin-top: 3%;
+    text-align: left;
+    margin-left: 3%;
+    color: rgb(155, 168, 179);
+    font-weight: lighter;
+    font-size: 16px;
+    line-height: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+#imgcar13{
+    /* border-radius: 4px; */
+    width: 295px;
+    height: 160px;
+    margin-left: 3%;
+    margin-right: 2%;
+    margin-top: 1%;
+    border: 1px solid rgb(201, 201, 201);
+    margin-bottom: 5px;
+}
+#specnum{
+    /* background-image: linear-gradient(to right, rgb(73, 198, 214) , rgb(42, 54, 109)); */
+    background-color:#CFEEF8; 
+    height: 115px;
+    color: #C1C1C2;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    flex-direction: row;
+    font-size: 20px;
+    font-weight:bold;
+    /* border-radius: 0 533px 1186px 0px; */
+    padding-left:10%;
+    box-shadow: 3px 5px 10px 0px #e1e1e1;
+  
+}
+#spec1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color:#002167; 
+    border-radius: 0 0 10px 10px;
+    color: #FFFFFF;
+    margin-top: 2%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+   
+}
+#col11{
+    margin-left: 3%;
+ font-weight: 600;
+ color: #222831;
+}
+#col22{
+margin-right: 2%;
+color: #002167;
+font-weight: lighter;
+}
+#borderright1{
+    border-right: 1px rgb(133, 130, 130) solid;
+   
+}
+a:hover{
+outline: none;
+text-decoration: none;
+}
+
+

@@ -1,0 +1,267 @@
+#logocars {
+  width: 80px;
+}
+
+#navcolors {
+  min-height: 70px;
+  background-color: #0A3D62;
+  padding: 0px 20px;
+
+}
+
+#navcolorsAR {
+  min-height: 70px;
+  background-color: #0A3D62;
+  padding: 0px 20px;
+  direction: rtl;
+}
+
+#SearchInputGroup {
+  justify-content: center;
+}
+
+#searchHome {
+  border-radius: 5px;
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#searchHome1 {
+  width: 400px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+#searcenter {
+  width: 400px;
+}
+
+#searchIcon {
+  height: 30px;
+  width: 30px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#loginNavContiner {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#BTNLOgIN_Nav {
+  color: #E4BE6D;
+  font-size: 16px;
+  height: 40px;
+  width: 85px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#BTNSignUp_Nav {
+  color: #E4BE6D;
+  font-size: 16px;
+  height: 40px;
+  width: 85px;
+  cursor: pointer;
+  border: 2px solid #E4BE6D;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#BTNLOgIN_Nav:hover,
+#BTNSignUp_Nav:hover {
+  transform: scale(1.04);
+}
+
+#LinebetweenSign {
+  width: 2px;
+  height: 30px;
+  margin: 10px;
+  background-color: #E4BE6D;
+}
+
+#SignInContiner {
+  height: 400px;
+}
+
+#SignInTitle {
+  height: 40px;
+  width: 100%;
+  background-color: #0A3D62;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin-bottom: 100px;
+}
+
+#SignUpTitle {
+  height: 40px;
+  width: 100%;
+  background-color: #0A3D62;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+#ContinerInputSignin {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.inputSignIn {
+  width: 60%;
+  height: 40px;
+  text-align: center;
+  border-radius: 15px;
+  border: 2px solid #0A3D62;
+  outline: none;
+}
+
+#BTNlogin {
+  width: 60%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  background-color: #0A3D62;
+  color: #fff;
+  cursor: pointer;
+}
+
+#BTNlogin:hover {
+  transform: scale(1.04);
+}
+
+#BTNlogin:active {
+  transform: scale(1.01);
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#avatrBtnContiner {
+  display: flex;
+  justify-content: center;
+}
+
+#ButtomDashboard {
+  height: 40px;
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: #E4BE6D;
+  background-color: #0A3D62;
+}
+
+#ButtomDashboardOUT {
+  height: 40px;
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: #0A3D62;
+  background-color: #E4BE6D;
+}
+
+#ButtomDashboard:hover,
+#ButtomDashboardOUT:hover {
+  transform: scale(1.04);
+}
+
+#ButtomDashboard:active,
+#ButtomDashboardOUT:active {
+  transform: scale(1.01);
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#upAvatarContiner {
+  /* width: 200px; */
+  display: flex;
+  justify-content: flex-end;
+}
+
+#AvatarContiner {
+  border: 2px solid #E4BE6D;
+  width: 52px;
+
+
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+
+@media (max-width: 1000px) {
+  #searchHome {
+    width: 300px;
+  }
+
+  #searchHome1 {
+    width: 300px;
+  }
+
+  #searcenter {
+    width: 300px;
+  }
+}
+
+@media (max-width: 991px) {
+  #searchHome {
+    width: 200px;
+  }
+
+  #searchHome1 {
+    width: 200px;
+  }
+
+  #searcenter {
+    width: 200px;
+  }
+
+  .input-group {
+    margin-top: 40px;
+  }
+
+  #upAvatarContiner {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+
+  #loginNavContiner {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

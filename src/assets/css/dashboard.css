@@ -1,0 +1,289 @@
+#sideBarBGC {
+    background-image: url("../img/qq.jpg");
+    height: 100vh;
+    width: 239px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fafafa;
+}
+
+#sideBarBGC1 {
+    position: absolute;
+    width: 239px;
+
+    background-color: #0A3D62;
+    height: 100vh;
+    opacity: 0.4;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#logoHeader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+}
+
+#logoHeaderimg {
+    height: 70px;
+    float: right;
+}
+
+#spanINdashBord {
+    /* width: 90px; */
+    /* height: 30px; */
+    background-color: #0A3D62;
+    color: #E4BE6D;
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+#titleTable {
+    height: 80px;
+    width: 100%;
+    background: linear-gradient(-70deg, #0A3D62 30%, rgba(216, 200, 200, 0) 30%);
+    box-shadow: inset 0 0 30px #0A3D62;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #E4BE6D;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    margin-top: 50px;
+}
+
+#titleTable span {
+    margin-right: 50px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+#BTNADDNEWCARDASH {
+    width: 120px;
+    height: 40px;
+    background-color: #E4BE6D;
+    color: #0A3D62;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 50px;
+}
+#BTNADDNEWCARDASH1 {
+    width: 120px;
+    height: 40px;
+    background-color: #E4BE6D;
+    color: #0A3D62;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+#BTNADDNEWCARDASH:hover ,#BTNADDNEWCARDASH1:hover{
+    transform: scale(1.04);
+}
+
+#BTNADDNEWCARDASH:active,#BTNADDNEWCARDASH1:active {
+    transform: scale(1.01);
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+#msgDelete{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: 600;
+}
+#tabledashboardText{
+    font-size: 18px;
+}
+#tabledashboardText1{
+    font-size: 18px;
+    font-weight: 600;
+}
+#BtnGallaryDashContiner{
+    display: flex;
+    align-items: center;
+}
+#selectGallryDashInput{
+    width: 250px;
+    height: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 15px;
+
+    overflow:scroll;
+
+}
+
+#selectGallryDashoption{
+    overflow:auto;
+    height: 300px;
+    width: 250px;
+}
+#InputTExtDash{
+width: 90%;
+
+margin: 10px 5%;
+outline: none;
+height: 43px;
+border: #0A3D62 1px solid;
+border-radius: 5px;
+direction: rtl;
+font-size: 18px;
+text-align: right;
+/* padding-right: 30px; */
+}
+#InputTExtDash1{
+    width: 90%;
+    margin: 10px 5%;
+    outline: none;
+    height: 43px;
+    border: #0A3D62 1px solid;
+    border-radius: 5px;
+    direction: rtl;
+    font-size: 18px;
+    padding-right: 30px;
+    }
+#InputTExtDashArea{
+    width: 96%;
+    margin: 10px 2%;
+    outline: none;
+    min-height: 150px;
+    border: #0A3D62 1px solid;
+    border-radius: 5px;
+    direction: rtl;
+    font-size: 18px;
+    padding-right: 30px;
+    }
+#labelUpInputCarDas{
+    height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 400;
+    background-color: #0A3D62;
+    color: #E4BE6D;
+    margin: 10px 0px;
+    border-radius: 10px;
+}
+#btnSaveAddContiner{
+    width: 100%;
+    height: 100px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#btnSaveAdd{
+    height: 50px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#E4BE6D;
+    color: #0A3D62;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#btnSaveAdd:hover {
+    transform: scale(1.04);
+}
+
+#btnSaveAdd:active{
+    transform: scale(1.01);
+ 
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+#rowDash{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.maincardDashContiner{
+    width: 245px;
+    height: 165px;
+    background-color: #fafafa;
+ 
+    display: flex;
+align-items: center;
+justify-content: center;
+}
+.cardDashContiner{
+    width: 219px;
+    height: 115px;
+    background-color: #fafafa;
+}
+.cardDashContiner1{
+    width: 219px;
+    height: 115px;
+    color: #E4BE6D;
+    border: 0;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0,.14), 0 7px 10px -5px rgba(255, 152, 0,.4);
+}
+ #titleCardAdmin{
+     text-align: center;
+     padding-top: 20px;
+     font-size: 19px;
+     font-weight: bold;
+     color: #E4BE6D;
+ } 
+ .cardDashContiner2{
+    width: 65px;
+    height: 65px;
+    background: linear-gradient(60deg, #0A3D62, #0A3D62);
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0,.14), 0 7px 10px -5px rgba(255, 152, 0,.4);
+    float: left;
+    margin-left: 10px;
+    margin-right: 15px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cardDashContinertext{
+   
+    color: #E4BE6D;
+margin-left: 10px;
+   margin-top: 10px;
+}
+#ContentCardAdmin{
+    text-align: center;
+    padding-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #E4BE6D;
+ }
+ .MuiSvgIcon-root{
+     color: #E4BE6D
+ }
+ #NotFondStyle{
+     height: calc(100vh - 150px);
+ }

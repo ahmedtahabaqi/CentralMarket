@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'Bahij Janna';
+  src: url('./assets//font/Bahij_Janna-Regular.ttf');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #E4E4E4;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+*{
+  font-family: 'Bahij Janna';
+}
+#ap{
+ min-height:calc(100vh - 60px);
+} 

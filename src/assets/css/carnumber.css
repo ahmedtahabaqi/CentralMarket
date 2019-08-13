@@ -1,0 +1,68 @@
+#MaincardNumberContiner{
+    display: flex;
+    justify-content: center;
+    margin: 50px 0px;
+}
+#cardNumberContiner{
+    width: 200px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 7px -1px rgba(94, 94, 94, 1);
+    -moz-box-shadow: 0px 0px 7px -1px rgba(94, 94, 94, 1);
+    box-shadow: 0px 0px 7px -1px rgba(94, 94, 94, 1);
+}
+#CarNumberImgContiner {
+    width: 200px;
+    height: 100px;
+}
+
+#CarNumberImg {
+    width: 200px;
+    height: 102px;
+    border-radius: 10px 10px 0px 0px ;
+}
+
+#contentCardNumbers {
+    height: 100px;
+    width: 200px;
+    background-color: #fff;
+    border-radius: 0px 0px 10px 10px ;
+    padding: 10px;
+}
+
+
+
+/* #locationCardTitle1 {
+    margin-left: 5px;
+} */
+
+#locationCardTitle2 {
+    margin-left: 12px;
+    
+}
+#priceCarNumberOpacity{
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    background-color: #000;
+    z-index: 2;
+    border-radius: 5px 0px 10px 0px;
+    opacity: 0.8;
+}
+#priceCarNumber{
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    z-index: 3;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px 0px 10px 0px;
+}
+#contentCardNumbers1{
+display: flex;
+align-items: center;
+flex-direction: row;
+justify-content: space-between;
+margin-top: 10px;
+}

@@ -1,0 +1,89 @@
+#namegallearyCardopacity {
+    margin-top: -40px;
+    height: 40px;
+    width: 300px;
+ 
+    background-color: #000;
+  opacity: 0.6;
+  z-index: 2;
+}
+#namegallearyCard {
+    position: absolute;
+    z-index: 3;
+    margin-top: -40px;
+    height: 40px;
+    width: 300px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#NumberCardGallaryContiner {
+    height: 40px;
+    width: 300px;
+    background-color: #fff;
+    border-radius: 0px 0px 5px 5px;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#NumberCardGallaryContiner img{
+    margin-left: 20px;
+
+    
+}
+
+#imgcar1 {
+z-index: 1;
+    border-radius: 5px 5px 0 0;
+    width: 300px;
+  height: 116px;
+}
+
+#carGalleryCardContiner {
+    width: 300px;
+    border-radius: 5px;
+    margin: 50px 0px;
+    -webkit-box-shadow: 0px 0px 7px -1px rgba(94,94,94,1);
+    -moz-box-shadow: 0px 0px 7px -1px rgba(94,94,94,1);
+    box-shadow: 0px 0px 7px -1px rgba(94,94,94,1);
+    cursor: pointer;
+}
+.locationCardTitle2{
+    margin-right: 20px;
+}
+#mainContinerGallery{
+    display: flex;
+    justify-content: center;
+}
+#galleryContentHeader{
+    width: 100%;
+}
+#galleryContentHeaderImg{
+    width: 100%;
+}
+#titleContinerGallaopacity{
+    height: 60px;
+    width: 100%;
+    position: absolute;
+    margin-top: -60px;
+z-index: 1;
+    background-color: #000;
+    opacity: 0.5;
+}
+#titleContinerGalla{
+    position: absolute;
+    margin-top: -60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    width: 100%;
+    padding: 0px 40px;
+    color: #fff;
+    font-size: 26px;
+    font-weight: 500;
+    z-index: 2;
+}

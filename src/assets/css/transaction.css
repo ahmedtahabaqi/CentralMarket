@@ -1,0 +1,75 @@
+#titleCarPage{
+    background-color: #0A3D62;
+    color: #E4BE6D;
+    width: 90%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px 5%;
+    border-radius: 10px;
+    font-size: 25px;
+    font-weight: 500;
+    padding: 0px 20px;
+    }
+
+#theadTable1Continer{
+background-color: #0A3D62;
+color: #E4BE6D;
+width: 100%;
+height: 60px;
+display: flex;
+align-items: center;
+font-size: 20px;
+justify-content: center;
+}
+#RowTable{
+    -webkit-box-shadow: 0px 0px 7px -1px rgba(94, 94, 94, 1);
+    -moz-box-shadow: 0px 0px 7px -1px rgba(94, 94, 94, 1);
+    box-shadow: 0px 0px 7px -1px rgba(94, 94, 94, 1);
+    
+}
+#RowTableAR{
+   
+    text-align: right;
+}
+#theadTable1Continer1{
+    background-color: #0A3D62;
+    color: #E4BE6D;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-top:35px; */
+    font-size: 20px;
+    }
+#descriptionCarContiner{
+    width: 100%;
+    min-height: 120px;
+    margin-bottom: 20px;
+    padding: 30px;
+    font-size: 20px;
+    -webkit-box-shadow: 0px 0px 7px -1px rgba(94, 94, 94, 1);
+    -moz-box-shadow: 0px 0px 7px -1px rgba(94, 94, 94, 1);
+    box-shadow: 0px 0px 7px -1px rgba(94, 94, 94, 1);
+}
+#descriptionCarContinerAR{
+    width: 100%;
+    min-height: 120px;
+    margin-bottom: 20px;
+    padding: 30px;
+    font-size: 20px;
+    -webkit-box-shadow: 0px 0px 7px -1px rgba(94, 94, 94, 1);
+    -moz-box-shadow: 0px 0px 7px -1px rgba(94, 94, 94, 1);
+    box-shadow: 0px 0px 7px -1px rgba(94, 94, 94, 1);
+    text-align: right;
+}
+@media (max-width: 580px) { 
+    #titleCarPage{
+       
+        font-size: 17px;
+        font-weight: 400;
+       
+        }
+  }
