@@ -37,24 +37,25 @@ class footer extends Component {
                     <div id='footerContiner2'>
                       <div id='footerContiner2_1'>Download Central Market app</div>
                       <div id='footerContiner2_2'>
-                        <img id='storyImage' src={require('../../assets/img/playstore.png')} alt='img' />
-                        <img id='storyImage' src={require('../../assets/img/itunes.svg')} alt='img' 
-                        onClick={()=>window.open('https://apps.apple.com/us/app/%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2%D9%8A/id1476141012')} />
+                        <img id='storyImage' src={require('../../assets/img/playstore.png')} alt='img'
+                          onClick={() => window.open('https://play.google.com/store/apps/details?id=com.mustafayusef.sharay')} />
+                        <img id='storyImage' src={require('../../assets/img/itunes.svg')} alt='img'
+                          onClick={() => window.open('https://apps.apple.com/us/app/%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2%D9%8A/id1476141012')} />
                       </div>
                     </div>
                   </Col>
                   <Col md={12} lg={3}>
                     <div id='footerContiner3'>
                       <div id='sochilContiner'>
-                      <div>
-                            <img id='storyImagesocil' src={require('../../assets/img/facebook.png')} alt='img' 
-                            onClick={()=>window.open('https://www.facebook.com/central.cars.iq')}/>
-                            <img id='storyImagesocil' src={require('../../assets/img/instagram.png')} alt='img'
-                            onClick={()=>window.open('https://www.instagram.com/central.iq/')} />
-                            <img id='storyImagesocil' src={require('../../assets/img/twitter.png')} alt='img' 
-                            onClick={()=>window.open('https://twitter.com/IqCentral')}/>
-                          </div>
-                       
+                        <div>
+                          <img id='storyImagesocil' src={require('../../assets/img/facebook.png')} alt='img'
+                            onClick={() => window.open('https://www.facebook.com/central.cars.iq')} />
+                          <img id='storyImagesocil' src={require('../../assets/img/instagram.png')} alt='img'
+                            onClick={() => window.open('https://www.instagram.com/central.iq/')} />
+                          <img id='storyImagesocil' src={require('../../assets/img/twitter.png')} alt='img'
+                            onClick={() => window.open('https://twitter.com/IqCentral')} />
+                        </div>
+
                       </div>
                     </div>
                   </Col>
@@ -89,9 +90,10 @@ class footer extends Component {
                       <div id='footerContiner2'>
                         <div id='footerContiner2_1'>حمل تطبيق السوق المركزي</div>
                         <div id='footerContiner2_2'>
-                          <img id='storyImage' src={require('../../assets/img/playstore.png')} alt='img' />
+                          <img id='storyImage' src={require('../../assets/img/playstore.png')} alt='img'
+                            onClick={() => window.open('https://play.google.com/store/apps/details?id=com.mustafayusef.sharay')} />
                           <img id='storyImage' src={require('../../assets/img/itunes.svg')} alt='img'
-                          onClick={()=>window.open('https://apps.apple.com/us/app/%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2%D9%8A/id1476141012')} />
+                            onClick={() => window.open('https://apps.apple.com/us/app/%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2%D9%8A/id1476141012')} />
                         </div>
                       </div>
                     </Col>
@@ -99,14 +101,14 @@ class footer extends Component {
                       <div id='footerContiner3'>
                         <div id='sochilContiner'>
                           <div>
-                            <img id='storyImagesocil' src={require('../../assets/img/facebook.png')} alt='img' 
-                            onClick={()=>window.open('https://www.facebook.com/central.cars.iq')}/>
+                            <img id='storyImagesocil' src={require('../../assets/img/facebook.png')} alt='img'
+                              onClick={() => window.open('https://www.facebook.com/central.cars.iq')} />
                             <img id='storyImagesocil' src={require('../../assets/img/instagram.png')} alt='img'
-                            onClick={()=>window.open('https://www.instagram.com/central.iq/')} />
-                            <img id='storyImagesocil' src={require('../../assets/img/twitter.png')} alt='img' 
-                            onClick={()=>window.open('https://twitter.com/IqCentral')}/>
+                              onClick={() => window.open('https://www.instagram.com/central.iq/')} />
+                            <img id='storyImagesocil' src={require('../../assets/img/twitter.png')} alt='img'
+                              onClick={() => window.open('https://twitter.com/IqCentral')} />
                           </div>
-                       
+
                         </div>
                       </div>
                     </Col>

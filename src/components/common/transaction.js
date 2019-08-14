@@ -153,16 +153,21 @@ class Transaction extends Component {
                                                 </Col>
                                             </Row>
                                             <div id='titleCarPage'>
-                                                <div id='FavCardContiner'>
-                                                    <div>{car.price} $</div>
-                                                    <div >
-                                                        <Stars id="star"
-                                                            style={{ color: this.state.colorFav, cursor: 'pointer', width: 40, height: 40 }}
-                                                            onClick={() => {
-                                                                this.AddFavor()
-                                                            }} />
+                                            <div id='FavCardContiner'>
+                                                        <div>{car.price} $</div>
+                                                        {ctx.value.login === 'out' ? (<div></div>) : (
+                                                            <div >
+                                                                <Stars id="star"
+                                                                    style={{ color: this.state.colorFav, cursor: 'pointer', width: 40, height: 40 }}
+                                                                    onClick={() => {
+                                                                        this.AddFavor()
+                                                                    }} />
+                                                            </div>
+
+                                                        )}
+
                                                     </div>
-                                                </div>
+                                                 
                                                 <div>{car.title}</div>
                                                 <div>{car.mileage} Mi</div>
                                             </div>
@@ -312,7 +317,21 @@ class Transaction extends Component {
                                                     </Col>
                                                 </Row>
                                                 <div id='titleCarPage'>
-                                                    <div>{car.price} $</div>
+                                                <div id='FavCardContiner'>
+                                                        <div>{car.price} $</div>
+                                                        {ctx.value.login === 'out' ? (<div></div>) : (
+                                                            <div >
+                                                                <Stars id="star"
+                                                                    style={{ color: this.state.colorFav, cursor: 'pointer', width: 40, height: 40 }}
+                                                                    onClick={() => {
+                                                                        this.AddFavor()
+                                                                    }} />
+                                                            </div>
+
+                                                        )}
+
+                                                    </div>
+                                                   
                                                     <div>{car.title}</div>
                                                     <div>{car.mileage} Mi</div>
                                                 </div>

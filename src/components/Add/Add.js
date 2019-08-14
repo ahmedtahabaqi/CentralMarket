@@ -156,6 +156,9 @@ class Add extends React.Component {
 
             });
     }
+    cekLogin() {
+        document.getElementById("BTNLOgIN_Nav").click();
+    }
 
     brandFun() {
         var arr = [{ value: 'نوع السيارة', label: 'نوع السيارة' }];
@@ -223,502 +226,507 @@ class Add extends React.Component {
                         <div>
                             <Navb />
                             <Category />
-                            {this.state.firstPage === 'true' ? (
-                                <div>
-                                    <div style={{
-                                        paddingBottom: '5%', paddingTop: '1%', width: '100%', display: 'flex', alignItems: 'center',
-                                        justifyContent: 'center', flexDirection: 'column',
-                                    }}  >
+                            <div id='marginup'>
+                                {this.state.firstPage === 'true' ? (
+                                    <div>
                                         <div style={{
-                                            marginTop: '2%', height: '150px', width: '85%', color: '#F8F9FA', borderRadius: '10px',
-                                            paddingRight: '50px', fontSize: '30px', fontWeight: '600', display: 'flex', alignItems: 'center',
-                                            justifyContent: 'center', backgroundColor: "#E4BE6D",
+                                            paddingBottom: '5%', paddingTop: '1%', width: '100%', display: 'flex', alignItems: 'center',
+                                            justifyContent: 'center', flexDirection: 'column',
                                         }}  >
-                                            اضافة اعلان
+                                            <div style={{
+                                                marginTop: '2%', height: '150px', width: '85%', color: '#F8F9FA', borderRadius: '10px',
+                                                paddingRight: '50px', fontSize: '30px', fontWeight: '600', display: 'flex', alignItems: 'center',
+                                                justifyContent: 'center', backgroundColor: "#E4BE6D",
+                                            }}  >
+                                                اضافة اعلان
                                         </div>
-                                        <div style={{
-                                            minHeight: '300px', width: '85%', backgroundColor: '#F8F9FA', borderRadius: '10px',
-                                            paddingTop: '2%', paddingBottom: '5%', paddingLeft: '10px', paddingRight: '10px'
-                                        }} >
-                                            <div id='descriptionAdd'>
-                                                <p>لاعلان سيارتكم انقر على ( التالي ) ،اتبع الخطوات بملئ الحقول جميعها من السعر
-                                                     ( ينصح بكتابة السعر ) وتحميل الصور على ان تكون صور في اضاءة جيدة و
-                                               اختيار زوايا مناسبة لجوانب السيارة الاربعة كاملة دون اقتطاع ، مع صورتين لداخلية السيارة
+                                            <div style={{
+                                                minHeight: '300px', width: '85%', backgroundColor: '#F8F9FA', borderRadius: '10px',
+                                                paddingTop: '2%', paddingBottom: '5%', paddingLeft: '10px', paddingRight: '10px'
+                                            }} >
+                                                <div id='descriptionAdd'>
+                                                    <p>لاعلان سيارتكم انقر على ( التالي ) ،اتبع الخطوات بملئ الحقول جميعها من السعر
+                                                         ( ينصح بكتابة السعر ) وتحميل الصور على ان تكون صور في اضاءة جيدة و
+                                                   اختيار زوايا مناسبة لجوانب السيارة الاربعة كاملة دون اقتطاع ، مع صورتين لداخلية السيارة
                                            </p>
-                                                <br />
-                                                <p>للاستفسار او للمساعدة الفنية اتصل على</p>
-                                                <p>  0781 000 6405</p>
-                                                <p>0771 460 1419</p>
-                                                <p>Central.marketiq@gmail.com</p>
+                                                    <br />
+                                                    <p>للاستفسار او للمساعدة الفنية اتصل على</p>
+                                                    <p>  0781 000 6405</p>
+                                                    <p>0771 460 1419</p>
+                                                    <p>Central.marketiq@gmail.com</p>
+                                                </div>
+
                                             </div>
 
                                         </div>
-
-                                    </div>
-                                    <div id='BTnNextContiner'>
-                                        <Link to={`/add?next=${false}`}>
-                                            <div onClick={() => this.setState({ firstPage: false })} id='BTnNext'>التالي</div>
-                                        </Link>
-                                    </div>
-                                </div>
-                            ) : (
-                                    <div id="numdercar1">
-                                        <div style={{ margin: '0px 50px', direction: 'rtl' }}>
-                                            <div id='labelUpInputCarDas'>العنوان الرئيسي</div>
-
-                                            <Row>
-                                                <Col md={12}>
-                                                    <input autoComplete='off' type='text' placeholder='العنوان' id='InputTExtDash1'
-                                                        onChange={(e) => this.setState({ mainTitleinput: e.target.value })} />
-                                                </Col>
-                                            </Row>
-
-                                            <div id='labelUpInputCarDas'>المعلومات الاساسية</div>
-
-                                            <Row>
-                                                <Col sm={12} md={6} lg={4}>
-                                                    <div id='InputTExtDash'>
-                                                        <Select
-                                                            onChange={(e) => {
-                                                                if (e.value !== 'Brand') {
-                                                                    this.setState({ TypeCarSelect: e.value })
-                                                                }
-                                                            }}
-                                                            defaultValue={this.brandFun()[0]}
-                                                            options={this.brandFun()}
-                                                        />
-                                                    </div>
-                                                </Col>
-                                                <Col sm={12} md={6} lg={4}>
-                                                    <div id='InputTExtDash'>
-                                                        <Select
-
-                                                            onChange={(e) => {
-                                                                if (e.value !== 'Class') {
-                                                                    this.setState({ ModleCarSelect: e.value })
-                                                                }
-                                                            }}
-                                                            defaultValue={this.classFun()[0]}
-                                                            options={this.classFun()}
-                                                        />
-                                                    </div>
-
-                                                </Col>
-
-                                                <Col sm={12} md={6} lg={4}>
-                                                    <Form.Group style={{ direction: 'rtl' }} >
-                                                        <Form.Control as="select" id='InputTExtDash'
-                                                            onChange={(even) => {
-                                                                if (even.target.value !== 'Select') {
-                                                                    this.setState({ Color: even.target.value })
-                                                                }
-                                                            }}>
-                                                            <option value="Select"> اللون الخارجي</option>
-
-                                                            <option value='ابيض' >ابيض</option>
-                                                            <option value='حليبي' >حليبي</option>
-                                                            <option value='سلفر' >سلفر</option>
-                                                            <option value='نيلي' >نيلي</option>
-                                                            <option value='سمائي' >سمائي</option>
-                                                            <option value='ازرق' >ازرق</option>
-                                                            <option value='احمر' >احمر</option>
-                                                            <option value='ماروني' >ماروني</option>
-                                                            <option value='برتقالي' >برتقالي</option>
-                                                            <option value='اصفر' >اصفر</option>
-                                                            <option value='اخضر' >اخضر</option>
-                                                            <option value='جوزي' >جوزي</option>
-                                                            <option value='فيلي' >فيلي</option>
-                                                            <option value='اسود' >اسود</option>
-                                                            <option value='بنفسجي' >بنفسجي</option>
-                                                            <option value='وردي' >وردي</option>
-
-
-                                                        </Form.Control>
-
-                                                    </Form.Group>
-                                                </Col>
-                                                <Col sm={12} md={6} lg={4}>
-                                                    <Form.Group style={{ direction: 'rtl' }} >
-                                                        <Form.Control as="select" id='InputTExtDash'
-                                                            onChange={(even) => {
-                                                                if (even.target.value !== 'Select') {
-                                                                    this.setState({ StateSelect: even.target.value })
-                                                                }
-                                                            }}>
-                                                            <option value="Select">الحالة</option>
-
-                                                            <option value='جديد' >جديد</option>
-                                                            <option value='جديد قطعة صبغ' >جديد قطعة صبغ</option>
-                                                            <option value='جديد قطعتان صبغ' >جديد قطعتان صبغ</option>
-                                                            <option value='جديد 3 قطع صبغ' >جديد 3 قطع صبغ</option>
-                                                            <option value='جديد 4 قطع صبغ' >جديد 4 قطع صبغ</option>
-                                                            <option value='مستعمل' >مستعمل</option>
-                                                            <option value='مستعمل قطعة صبغ' >مستعمل قطعة صبغ</option>
-                                                            <option value='مستعمل قطعتان صبغ' >مستعمل قطعتان صبغ</option>
-                                                            <option value='مستعمل 3 قطع صبغ' >مستعمل 3 قطع صبغ</option>
-                                                            <option value='مستعمل 4 قطع صبغ' >مستعمل 4 قطع صبغ</option>
-                                                            <option value='مستعمل 5 قطع صبغ' >مستعمل 5 قطع صبغ</option>
-                                                            <option value='مستعمل صبغ عام' >مستعمل صبغ عام</option>
-                                                            <option value='غرقان' >غرقان</option>
-                                                        </Form.Control>
-
-                                                    </Form.Group>
-                                                </Col>
-
-                                                <Col sm={12} md={6} lg={4}>
-                                                    <Form.Group style={{ direction: 'rtl' }} >
-                                                        <Form.Control as="select" id='InputTExtDash'
-                                                            onChange={(even) => {
-                                                                if (even.target.value !== 'Select') {
-                                                                    this.setState({ YearSelect: even.target.value })
-                                                                }
-                                                            }}>
-                                                            <option value="Select">سنة الصنع</option>
-
-                                                            <option value='1990' >1990</option>
-                                                            <option value='1991' >1991</option>
-                                                            <option value='1992' >1992</option>
-                                                            <option value='1993' >1993</option>
-                                                            <option value='1994' >1994</option>
-                                                            <option value='1995' >1995</option>
-                                                            <option value='1996' >1996</option>
-                                                            <option value='1997' >1997</option>
-                                                            <option value='1998' >1998</option>
-                                                            <option value='1999' >1999</option>
-                                                            <option value='2000' >2000</option>
-                                                            <option value='2001' >2001</option>
-                                                            <option value='2002' >2002</option>
-                                                            <option value='2003' >2003</option>
-                                                            <option value='2004' >2004</option>
-                                                            <option value='2005' >2005</option>
-                                                            <option value='2006' >2006</option>
-                                                            <option value='2007' >2007</option>
-                                                            <option value='2008' >2008</option>
-                                                            <option value='2009' >2009</option>
-                                                            <option value='2010' >2010</option>
-                                                            <option value='2011' >2011</option>
-                                                            <option value='2012' >2012</option>
-                                                            <option value='2013' >2013</option>
-                                                            <option value='2014' >2014</option>
-                                                            <option value='2015' >2015</option>
-                                                            <option value='2016' >2016</option>
-                                                            <option value='2017' >2017</option>
-                                                            <option value='2018' >2018</option>
-                                                            <option value='2019' >2019</option>
-                                                            <option value='2020' >2020</option>
-                                                            <option value='2021' >2021</option>
-
-                                                        </Form.Control>
-
-                                                    </Form.Group>
-                                                </Col>
-
-                                                <Col sm={12} md={6} lg={4}>
-                                                    <Form.Group style={{ direction: 'rtl' }} >
-                                                        <Form.Control as="select" id='InputTExtDash'
-                                                            onChange={(even) => {
-                                                                if (even.target.value !== 'Select') {
-                                                                    this.setState({ ImportingSelect: even.target.value })
-                                                                }
-                                                            }}>
-                                                            <option value="Select">مصدر السيارة</option>
-
-                                                            <option value='امريكي' >امريكي</option>
-                                                            <option value='خليجي' >خليجي</option>
-                                                            <option value='كندي' >كندي</option>
-                                                            <option value='كوري' >كوري</option>
-                                                            <option value='اوربي' >اوربي</option>
-                                                        </Form.Control>
-
-                                                    </Form.Group>
-                                                </Col>
-                                                <Col sm={12} md={6} lg={4}>
-                                                    <Form.Group style={{ direction: 'rtl' }} >
-                                                        <Form.Control as="select" id='InputTExtDash'
-                                                            onChange={(even) => {
-                                                                if (even.target.value !== 'Select') {
-                                                                    this.setState({ MillSelect: even.target.value })
-                                                                }
-                                                            }}>
-                                                            <option value="Select">المسافة المقطوعة</option>
-
-                                                            <option value='0' > 0 ميل</option>
-                                                            <option value='10000' >  اقل من 10000 ميل</option>
-                                                            <option value='20000' >  اقل من 20000 ميل</option>
-                                                            <option value='30000' >  اقل من 30000 ميل</option>
-                                                            <option value='40000' >  اقل من 40000 ميل</option>
-                                                            <option value='50000' >  اقل من 50000 ميل</option>
-                                                            <option value='60000' >  اقل من 60000 ميل</option>
-                                                            <option value='70000' >  اقل من 70000 ميل</option>
-                                                            <option value='80000' >  اقل من 80000 ميل</option>
-                                                            <option value='90000' >  اقل من 90000 ميل</option>
-                                                            <option value='100000' >  اقل من 100000 ميل</option>
-                                                            <option value='150000' >  اقل من 150000 ميل</option>
-                                                            <option value='200000' >  اقل من 200000 ميل</option>
-                                                            <option value='300000' >  اقل من 300000 ميل</option>
-                                                            <option value='400000' >  اقل من 400000 ميل</option>
-                                                        </Form.Control>
-
-                                                    </Form.Group>
-                                                </Col>
-                                                <Col sm={12} md={6} lg={4}>
-                                                    <input autoComplete='off' type='number' placeholder='السعر' id='InputTExtDash1'
-                                                        onChange={(e) => this.setState({ priceCar: e.target.value })} />
-                                                </Col>
-                                            </Row>
-
-                                            <div id='labelUpInputCarDas'>المحرك</div>
-
-                                            <Row>
-                                                <Col sm={12} md={6} lg={4}>
-                                                    <Form.Group style={{ direction: 'rtl' }} >
-                                                        <Form.Control as="select" id='InputTExtDash'
-                                                            onChange={(even) => {
-                                                                if (even.target.value !== 'Select') {
-                                                                    this.setState({ gearSelect: even.target.value })
-                                                                }
-                                                            }}>
-                                                            <option value="Select">نوع ناقل السرعة</option>
-
-                                                            <option value='اوتماتيك' >اوتماتيك</option>
-                                                            <option value='أوتو تيبترونك' >أوتو تيبترونك</option>
-                                                            <option value='اوتوماتيك سبورت' >اوتوماتيك سبورت</option>
-                                                            <option value='اوتوماتيك 8 سرعات' >اوتوماتيك 8 سرعات</option>
-                                                            <option value='F1 اوتوماتيك' >اوتوماتيك F1</option>
-                                                            <option value='يدوي' >يدوي</option>
-                                                        </Form.Control>
-
-                                                    </Form.Group>
-                                                </Col>
-                                                <Col sm={12} md={6} lg={4}>
-                                                    <Form.Group style={{ direction: 'rtl' }} >
-                                                        <Form.Control as="select" id='InputTExtDash'
-                                                            onChange={(even) => {
-                                                                if (even.target.value !== 'Select') {
-                                                                    this.setState({ cylenderSelect: even.target.value })
-                                                                }
-                                                            }}>
-                                                            <option value="Select">عدد السلندرات</option>
-
-                                                            <option value='1 ' >1 </option>
-                                                            <option value='2 ' >2 </option>
-                                                            <option value='3 ' >3 </option>
-                                                            <option value='4 ' >4 </option>
-                                                            <option value='5 ' >5 </option>
-                                                            <option value='6 ' >6 </option>
-                                                            <option value='8 ' >8 </option>
-                                                            <option value='10 ' >10 </option>
-                                                            <option value='12 ' >12 </option>
-
-                                                        </Form.Control>
-
-                                                    </Form.Group>
-                                                </Col>
-                                                <Col sm={12} md={6} lg={4}>
-                                                    <Form.Group style={{ direction: 'rtl' }} >
-                                                        <Form.Control as="select" id='InputTExtDash'
-                                                            onChange={(even) => {
-                                                                if (even.target.value !== 'Select') {
-                                                                    this.setState({ oilSelect: even.target.value })
-                                                                }
-                                                            }}>
-                                                            <option value="Select">نوع الوقود	</option>
-
-                                                            <option value='بانزين' >بانزين</option>
-                                                            <option value='كاز' >كاز</option>
-                                                            <option value='غاز' >غاز</option>
-                                                            <option value='كهرباء' >كهرباء</option>
-                                                            <option value='بانزين + غاز' >بانزين + غاز</option>
-
-                                                        </Form.Control>
-
-                                                    </Form.Group>
-                                                </Col>
-                                                <Col sm={12} md={6} lg={4}>
-                                                    <Form.Group style={{ direction: 'rtl' }} >
-                                                        <Form.Control as="select" id='InputTExtDash'
-                                                            onChange={(even) => {
-                                                                if (even.target.value !== 'Select') {
-                                                                    this.setState({ WheelDriveSelect: even.target.value })
-                                                                }
-                                                            }}>
-                                                            <option value="Select">نظام الدفع</option>
-
-                                                            <option value='امامي' >امامي</option>
-                                                            <option value='خلفي' >خلفي</option>
-                                                            <option value='رباعية الدفع' >رباعية الدفع</option>
-
-                                                        </Form.Control>
-
-                                                    </Form.Group>
-                                                </Col>
-                                            </Row>
-
-                                            <div id='labelUpInputCarDas'>الداخل</div>
-
-                                            <Row>
-                                                <Col sm={12} md={6} lg={4}>
-                                                    <Form.Group style={{ direction: 'rtl' }} >
-                                                        <Form.Control as="select" id='InputTExtDash'
-                                                            onChange={(even) => {
-                                                                if (even.target.value !== 'Select') {
-                                                                    this.setState({ RoofSelect: even.target.value })
-                                                                }
-                                                            }}>
-                                                            <option value="Select">السقف</option>
-
-                                                            <option value='لايوجد فتحة' >لايوجد فتحة</option>
-                                                            <option value='يوجد فتحة' >يوجد فتحة</option>
-
-
-                                                        </Form.Control>
-
-                                                    </Form.Group>
-                                                </Col>
-                                                <Col sm={12} md={6} lg={4}>
-                                                    <Form.Group style={{ direction: 'rtl' }} >
-                                                        <Form.Control as="select" id='InputTExtDash'
-                                                            onChange={(even) => {
-                                                                if (even.target.value !== 'Select') {
-                                                                    this.setState({ TypeSetsSelect: even.target.value })
-                                                                }
-                                                            }}>
-                                                            <option value="Select">نوع الفرش</option>
-
-                                                            <option value='جلد' >جلد</option>
-                                                            <option value='قماش' >قماش</option>
-
-                                                        </Form.Control>
-
-                                                    </Form.Group>
-                                                </Col>
-
-                                            </Row>
-
-                                            <div id='labelUpInputCarDas'>التفاصيل</div>
-
-                                            <Row>
-
-                                                <Col md={12} >
-                                                    <textarea placeholder='التفاصيل' id='InputTExtDashArea'
-                                                        onChange={(e) => this.setState({ description: e.target.value })} />
-
-                                                </Col>
-                                            </Row>
-
-                                            <div id='labelUpInputCarDas'>معلومات</div>
-
-                                            <Row>
-                                                <Col sm={12} md={6} lg={4}>
-                                                    <input autoComplete='off' type='text' placeholder='رقم الهاتف' id='InputTExtDash1'
-                                                        onChange={(e) => this.setState({ PhoneInput: e.target.value })} />
-                                                </Col>
-                                                <Col sm={12} md={6} lg={4}>
-
-                                                    <div id='InputTExtDash'>
-                                                        <Select
-                                                            onChange={(e) => {
-                                                                if (e.value !== 'المحافظة') {
-                                                                    this.setState({ Cityinput: e.value })
-                                                                    console.log(e.value);
-                                                                }
-                                                            }}
-                                                            defaultValue={this.CityFun()[0]}
-                                                            options={this.CityFun()}
-                                                        />
-                                                    </div>
-
-                                                </Col>
-                                                <Col sm={12} md={6} lg={4}>
-                                                    <div id='InputTExtDash'>
-                                                        <Select
-                                                            onChange={(e) => {
-                                                                if (e.value !== 'المنطقة') {
-                                                                    this.setState({ City1input: e.value })
-                                                                    console.log(e.value);
-                                                                }
-                                                            }}
-                                                            defaultValue={this.City1Fun()[0]}
-                                                            options={this.City1Fun()}
-                                                        />
-                                                    </div>
-
-                                                </Col>
-                                            </Row>
-
-                                            <div id='labelUpInputCarDas'>الصور</div>
-
-                                            <Row style={{ marginBottom: 80 }}>
-                                                <Col sm={12} md={6} lg={4}>
-                                                    <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
-                                                        onChange={(img) => { this.setState({ imgCar1: img }) }} />
-                                                </Col>
-
-                                                <Col sm={12} md={6} lg={4}>
-                                                    <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
-                                                        onChange={(img) => { this.setState({ imgCar2: img, imgCar2Length: img.length }) }} />
-                                                </Col>
-
-                                                <Col sm={12} md={6} lg={4}>
-                                                    <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
-                                                        onChange={(img) => { this.setState({ imgCar3: img, imgCar3Length: img.length }) }} />
-                                                </Col>
-
-                                                <Col sm={12} md={6} lg={4}>
-                                                    <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
-                                                        onChange={(img) => { this.setState({ imgCar4: img, imgCar4Length: img.length }) }} />
-                                                </Col>
-
-                                                <Col sm={12} md={6} lg={4}>
-                                                    <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
-                                                        onChange={(img) => { this.setState({ imgCar5: img, imgCar5Length: img.length }) }} />
-                                                </Col>
-
-                                                <Col sm={12} md={6} lg={4}>
-                                                    <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
-                                                        onChange={(img) => { this.setState({ imgCar6: img, imgCar6Length: img.length }) }} />
-                                                </Col>
-
-                                                <Col sm={12} md={6} lg={4}>
-                                                    <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
-                                                        onChange={(img) => { this.setState({ imgCar7: img, imgCar7Length: img.length }) }} />
-                                                </Col>
-
-                                                <Col sm={12} md={6} lg={4}>
-                                                    <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
-                                                        onChange={(img) => { this.setState({ imgCar8: img, imgCar8Length: img.length }) }} />
-                                                </Col>
-
-                                                <Col sm={12} md={6} lg={4}>
-                                                    <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
-                                                        onChange={(img) => { this.setState({ imgCar9: img, imgCar9Length: img.length }) }} />
-                                                </Col>
-
-                                                <Col sm={12} md={6} lg={4}>
-                                                    <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
-                                                        onChange={(img) => { this.setState({ imgCar10: img, imgCar10Length: img.length }) }} />
-                                                </Col>
-
-                                                <Col sm={12} md={6} lg={4}>
-                                                    <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
-                                                        onChange={(img) => { this.setState({ imgCar11: img, imgCar11Length: img.length }) }} />
-                                                </Col>
-
-                                                <Col sm={12} md={6} lg={4}>
-                                                    <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
-                                                        onChange={(img) => { this.setState({ imgCar12: img, imgCar12Length: img.length }) }} />
-                                                </Col>
-
-                                            </Row>
-                                            <div id='btnSaveAddContiner'>
-                                                <div onClick={() => this.AddCar(ctx.value.user.id)} id='btnSaveAdd'>حقظ</div>
-                                            </div>
-
+                                        <div id='BTnNextContiner'>
+                                            <Link to={`/add?next=${false}`}>
+                                                <div onClick={() => this.setState({ firstPage: false })} id='BTnNext'>التالي</div>
+                                            </Link>
                                         </div>
-
                                     </div>
+                                ) : (
+                                        ctx.value.login === 'out' ? (this.cekLogin()
+                                        ) : (
+                                                <div id="numdercar1">
+                                                    <div style={{ margin: '0px 50px', direction: 'rtl' }}>
+                                                        <div id='labelUpInputCarDas'>العنوان الرئيسي</div>
 
-                                )}
+                                                        <Row>
+                                                            <Col md={12}>
+                                                                <input autoComplete='off' type='text' placeholder='العنوان' id='InputTExtDash1'
+                                                                    onChange={(e) => this.setState({ mainTitleinput: e.target.value })} />
+                                                            </Col>
+                                                        </Row>
+
+                                                        <div id='labelUpInputCarDas'>المعلومات الاساسية</div>
+
+                                                        <Row>
+                                                            <Col sm={12} md={6} lg={4}>
+                                                                <div id='InputTExtDash'>
+                                                                    <Select
+                                                                        onChange={(e) => {
+                                                                            if (e.value !== 'Brand') {
+                                                                                this.setState({ TypeCarSelect: e.value })
+                                                                            }
+                                                                        }}
+                                                                        defaultValue={this.brandFun()[0]}
+                                                                        options={this.brandFun()}
+                                                                    />
+                                                                </div>
+                                                            </Col>
+                                                            <Col sm={12} md={6} lg={4}>
+                                                                <div id='InputTExtDash'>
+                                                                    <Select
+
+                                                                        onChange={(e) => {
+                                                                            if (e.value !== 'Class') {
+                                                                                this.setState({ ModleCarSelect: e.value })
+                                                                            }
+                                                                        }}
+                                                                        defaultValue={this.classFun()[0]}
+                                                                        options={this.classFun()}
+                                                                    />
+                                                                </div>
+
+                                                            </Col>
+
+                                                            <Col sm={12} md={6} lg={4}>
+                                                                <Form.Group style={{ direction: 'rtl' }} >
+                                                                    <Form.Control as="select" id='InputTExtDash'
+                                                                        onChange={(even) => {
+                                                                            if (even.target.value !== 'Select') {
+                                                                                this.setState({ Color: even.target.value })
+                                                                            }
+                                                                        }}>
+                                                                        <option value="Select"> اللون الخارجي</option>
+
+                                                                        <option value='ابيض' >ابيض</option>
+                                                                        <option value='حليبي' >حليبي</option>
+                                                                        <option value='سلفر' >سلفر</option>
+                                                                        <option value='نيلي' >نيلي</option>
+                                                                        <option value='سمائي' >سمائي</option>
+                                                                        <option value='ازرق' >ازرق</option>
+                                                                        <option value='احمر' >احمر</option>
+                                                                        <option value='ماروني' >ماروني</option>
+                                                                        <option value='برتقالي' >برتقالي</option>
+                                                                        <option value='اصفر' >اصفر</option>
+                                                                        <option value='اخضر' >اخضر</option>
+                                                                        <option value='جوزي' >جوزي</option>
+                                                                        <option value='فيلي' >فيلي</option>
+                                                                        <option value='اسود' >اسود</option>
+                                                                        <option value='بنفسجي' >بنفسجي</option>
+                                                                        <option value='وردي' >وردي</option>
+
+
+                                                                    </Form.Control>
+
+                                                                </Form.Group>
+                                                            </Col>
+                                                            <Col sm={12} md={6} lg={4}>
+                                                                <Form.Group style={{ direction: 'rtl' }} >
+                                                                    <Form.Control as="select" id='InputTExtDash'
+                                                                        onChange={(even) => {
+                                                                            if (even.target.value !== 'Select') {
+                                                                                this.setState({ StateSelect: even.target.value })
+                                                                            }
+                                                                        }}>
+                                                                        <option value="Select">الحالة</option>
+
+                                                                        <option value='جديد' >جديد</option>
+                                                                        <option value='جديد قطعة صبغ' >جديد قطعة صبغ</option>
+                                                                        <option value='جديد قطعتان صبغ' >جديد قطعتان صبغ</option>
+                                                                        <option value='جديد 3 قطع صبغ' >جديد 3 قطع صبغ</option>
+                                                                        <option value='جديد 4 قطع صبغ' >جديد 4 قطع صبغ</option>
+                                                                        <option value='مستعمل' >مستعمل</option>
+                                                                        <option value='مستعمل قطعة صبغ' >مستعمل قطعة صبغ</option>
+                                                                        <option value='مستعمل قطعتان صبغ' >مستعمل قطعتان صبغ</option>
+                                                                        <option value='مستعمل 3 قطع صبغ' >مستعمل 3 قطع صبغ</option>
+                                                                        <option value='مستعمل 4 قطع صبغ' >مستعمل 4 قطع صبغ</option>
+                                                                        <option value='مستعمل 5 قطع صبغ' >مستعمل 5 قطع صبغ</option>
+                                                                        <option value='مستعمل صبغ عام' >مستعمل صبغ عام</option>
+                                                                        <option value='غرقان' >غرقان</option>
+                                                                    </Form.Control>
+
+                                                                </Form.Group>
+                                                            </Col>
+
+                                                            <Col sm={12} md={6} lg={4}>
+                                                                <Form.Group style={{ direction: 'rtl' }} >
+                                                                    <Form.Control as="select" id='InputTExtDash'
+                                                                        onChange={(even) => {
+                                                                            if (even.target.value !== 'Select') {
+                                                                                this.setState({ YearSelect: even.target.value })
+                                                                            }
+                                                                        }}>
+                                                                        <option value="Select">سنة الصنع</option>
+
+                                                                        <option value='1990' >1990</option>
+                                                                        <option value='1991' >1991</option>
+                                                                        <option value='1992' >1992</option>
+                                                                        <option value='1993' >1993</option>
+                                                                        <option value='1994' >1994</option>
+                                                                        <option value='1995' >1995</option>
+                                                                        <option value='1996' >1996</option>
+                                                                        <option value='1997' >1997</option>
+                                                                        <option value='1998' >1998</option>
+                                                                        <option value='1999' >1999</option>
+                                                                        <option value='2000' >2000</option>
+                                                                        <option value='2001' >2001</option>
+                                                                        <option value='2002' >2002</option>
+                                                                        <option value='2003' >2003</option>
+                                                                        <option value='2004' >2004</option>
+                                                                        <option value='2005' >2005</option>
+                                                                        <option value='2006' >2006</option>
+                                                                        <option value='2007' >2007</option>
+                                                                        <option value='2008' >2008</option>
+                                                                        <option value='2009' >2009</option>
+                                                                        <option value='2010' >2010</option>
+                                                                        <option value='2011' >2011</option>
+                                                                        <option value='2012' >2012</option>
+                                                                        <option value='2013' >2013</option>
+                                                                        <option value='2014' >2014</option>
+                                                                        <option value='2015' >2015</option>
+                                                                        <option value='2016' >2016</option>
+                                                                        <option value='2017' >2017</option>
+                                                                        <option value='2018' >2018</option>
+                                                                        <option value='2019' >2019</option>
+                                                                        <option value='2020' >2020</option>
+                                                                        <option value='2021' >2021</option>
+
+                                                                    </Form.Control>
+
+                                                                </Form.Group>
+                                                            </Col>
+
+                                                            <Col sm={12} md={6} lg={4}>
+                                                                <Form.Group style={{ direction: 'rtl' }} >
+                                                                    <Form.Control as="select" id='InputTExtDash'
+                                                                        onChange={(even) => {
+                                                                            if (even.target.value !== 'Select') {
+                                                                                this.setState({ ImportingSelect: even.target.value })
+                                                                            }
+                                                                        }}>
+                                                                        <option value="Select">مصدر السيارة</option>
+
+                                                                        <option value='امريكي' >امريكي</option>
+                                                                        <option value='خليجي' >خليجي</option>
+                                                                        <option value='كندي' >كندي</option>
+                                                                        <option value='كوري' >كوري</option>
+                                                                        <option value='اوربي' >اوربي</option>
+                                                                    </Form.Control>
+
+                                                                </Form.Group>
+                                                            </Col>
+                                                            <Col sm={12} md={6} lg={4}>
+                                                                <Form.Group style={{ direction: 'rtl' }} >
+                                                                    <Form.Control as="select" id='InputTExtDash'
+                                                                        onChange={(even) => {
+                                                                            if (even.target.value !== 'Select') {
+                                                                                this.setState({ MillSelect: even.target.value })
+                                                                            }
+                                                                        }}>
+                                                                        <option value="Select">المسافة المقطوعة</option>
+
+                                                                        <option value='0' > 0 ميل</option>
+                                                                        <option value='10000' >  اقل من 10000 ميل</option>
+                                                                        <option value='20000' >  اقل من 20000 ميل</option>
+                                                                        <option value='30000' >  اقل من 30000 ميل</option>
+                                                                        <option value='40000' >  اقل من 40000 ميل</option>
+                                                                        <option value='50000' >  اقل من 50000 ميل</option>
+                                                                        <option value='60000' >  اقل من 60000 ميل</option>
+                                                                        <option value='70000' >  اقل من 70000 ميل</option>
+                                                                        <option value='80000' >  اقل من 80000 ميل</option>
+                                                                        <option value='90000' >  اقل من 90000 ميل</option>
+                                                                        <option value='100000' >  اقل من 100000 ميل</option>
+                                                                        <option value='150000' >  اقل من 150000 ميل</option>
+                                                                        <option value='200000' >  اقل من 200000 ميل</option>
+                                                                        <option value='300000' >  اقل من 300000 ميل</option>
+                                                                        <option value='400000' >  اقل من 400000 ميل</option>
+                                                                    </Form.Control>
+
+                                                                </Form.Group>
+                                                            </Col>
+                                                            <Col sm={12} md={6} lg={4}>
+                                                                <input autoComplete='off' type='number' placeholder='السعر' id='InputTExtDash1'
+                                                                    onChange={(e) => this.setState({ priceCar: e.target.value })} />
+                                                            </Col>
+                                                        </Row>
+
+                                                        <div id='labelUpInputCarDas'>المحرك</div>
+
+                                                        <Row>
+                                                            <Col sm={12} md={6} lg={4}>
+                                                                <Form.Group style={{ direction: 'rtl' }} >
+                                                                    <Form.Control as="select" id='InputTExtDash'
+                                                                        onChange={(even) => {
+                                                                            if (even.target.value !== 'Select') {
+                                                                                this.setState({ gearSelect: even.target.value })
+                                                                            }
+                                                                        }}>
+                                                                        <option value="Select">نوع ناقل السرعة</option>
+
+                                                                        <option value='اوتماتيك' >اوتماتيك</option>
+                                                                        <option value='أوتو تيبترونك' >أوتو تيبترونك</option>
+                                                                        <option value='اوتوماتيك سبورت' >اوتوماتيك سبورت</option>
+                                                                        <option value='اوتوماتيك 8 سرعات' >اوتوماتيك 8 سرعات</option>
+                                                                        <option value='F1 اوتوماتيك' >اوتوماتيك F1</option>
+                                                                        <option value='يدوي' >يدوي</option>
+                                                                    </Form.Control>
+
+                                                                </Form.Group>
+                                                            </Col>
+                                                            <Col sm={12} md={6} lg={4}>
+                                                                <Form.Group style={{ direction: 'rtl' }} >
+                                                                    <Form.Control as="select" id='InputTExtDash'
+                                                                        onChange={(even) => {
+                                                                            if (even.target.value !== 'Select') {
+                                                                                this.setState({ cylenderSelect: even.target.value })
+                                                                            }
+                                                                        }}>
+                                                                        <option value="Select">عدد السلندرات</option>
+
+                                                                        <option value='1 ' >1 </option>
+                                                                        <option value='2 ' >2 </option>
+                                                                        <option value='3 ' >3 </option>
+                                                                        <option value='4 ' >4 </option>
+                                                                        <option value='5 ' >5 </option>
+                                                                        <option value='6 ' >6 </option>
+                                                                        <option value='8 ' >8 </option>
+                                                                        <option value='10 ' >10 </option>
+                                                                        <option value='12 ' >12 </option>
+
+                                                                    </Form.Control>
+
+                                                                </Form.Group>
+                                                            </Col>
+                                                            <Col sm={12} md={6} lg={4}>
+                                                                <Form.Group style={{ direction: 'rtl' }} >
+                                                                    <Form.Control as="select" id='InputTExtDash'
+                                                                        onChange={(even) => {
+                                                                            if (even.target.value !== 'Select') {
+                                                                                this.setState({ oilSelect: even.target.value })
+                                                                            }
+                                                                        }}>
+                                                                        <option value="Select">نوع الوقود	</option>
+
+                                                                        <option value='بانزين' >بانزين</option>
+                                                                        <option value='كاز' >كاز</option>
+                                                                        <option value='غاز' >غاز</option>
+                                                                        <option value='كهرباء' >كهرباء</option>
+                                                                        <option value='بانزين + غاز' >بانزين + غاز</option>
+
+                                                                    </Form.Control>
+
+                                                                </Form.Group>
+                                                            </Col>
+                                                            <Col sm={12} md={6} lg={4}>
+                                                                <Form.Group style={{ direction: 'rtl' }} >
+                                                                    <Form.Control as="select" id='InputTExtDash'
+                                                                        onChange={(even) => {
+                                                                            if (even.target.value !== 'Select') {
+                                                                                this.setState({ WheelDriveSelect: even.target.value })
+                                                                            }
+                                                                        }}>
+                                                                        <option value="Select">نظام الدفع</option>
+
+                                                                        <option value='امامي' >امامي</option>
+                                                                        <option value='خلفي' >خلفي</option>
+                                                                        <option value='رباعية الدفع' >رباعية الدفع</option>
+
+                                                                    </Form.Control>
+
+                                                                </Form.Group>
+                                                            </Col>
+                                                        </Row>
+
+                                                        <div id='labelUpInputCarDas'>الداخل</div>
+
+                                                        <Row>
+                                                            <Col sm={12} md={6} lg={4}>
+                                                                <Form.Group style={{ direction: 'rtl' }} >
+                                                                    <Form.Control as="select" id='InputTExtDash'
+                                                                        onChange={(even) => {
+                                                                            if (even.target.value !== 'Select') {
+                                                                                this.setState({ RoofSelect: even.target.value })
+                                                                            }
+                                                                        }}>
+                                                                        <option value="Select">السقف</option>
+
+                                                                        <option value='لايوجد فتحة' >لايوجد فتحة</option>
+                                                                        <option value='يوجد فتحة' >يوجد فتحة</option>
+
+
+                                                                    </Form.Control>
+
+                                                                </Form.Group>
+                                                            </Col>
+                                                            <Col sm={12} md={6} lg={4}>
+                                                                <Form.Group style={{ direction: 'rtl' }} >
+                                                                    <Form.Control as="select" id='InputTExtDash'
+                                                                        onChange={(even) => {
+                                                                            if (even.target.value !== 'Select') {
+                                                                                this.setState({ TypeSetsSelect: even.target.value })
+                                                                            }
+                                                                        }}>
+                                                                        <option value="Select">نوع الفرش</option>
+
+                                                                        <option value='جلد' >جلد</option>
+                                                                        <option value='قماش' >قماش</option>
+
+                                                                    </Form.Control>
+
+                                                                </Form.Group>
+                                                            </Col>
+
+                                                        </Row>
+
+                                                        <div id='labelUpInputCarDas'>التفاصيل</div>
+
+                                                        <Row>
+
+                                                            <Col md={12} >
+                                                                <textarea placeholder='التفاصيل' id='InputTExtDashArea'
+                                                                    onChange={(e) => this.setState({ description: e.target.value })} />
+
+                                                            </Col>
+                                                        </Row>
+
+                                                        <div id='labelUpInputCarDas'>معلومات</div>
+
+                                                        <Row>
+                                                            <Col sm={12} md={6} lg={4}>
+                                                                <input autoComplete='off' type='text' placeholder='رقم الهاتف' id='InputTExtDash1'
+                                                                    onChange={(e) => this.setState({ PhoneInput: e.target.value })} />
+                                                            </Col>
+                                                            <Col sm={12} md={6} lg={4}>
+
+                                                                <div id='InputTExtDash'>
+                                                                    <Select
+                                                                        onChange={(e) => {
+                                                                            if (e.value !== 'المحافظة') {
+                                                                                this.setState({ Cityinput: e.value })
+                                                                                console.log(e.value);
+                                                                            }
+                                                                        }}
+                                                                        defaultValue={this.CityFun()[0]}
+                                                                        options={this.CityFun()}
+                                                                    />
+                                                                </div>
+
+                                                            </Col>
+                                                            <Col sm={12} md={6} lg={4}>
+                                                                <div id='InputTExtDash'>
+                                                                    <Select
+                                                                        onChange={(e) => {
+                                                                            if (e.value !== 'المنطقة') {
+                                                                                this.setState({ City1input: e.value })
+                                                                                console.log(e.value);
+                                                                            }
+                                                                        }}
+                                                                        defaultValue={this.City1Fun()[0]}
+                                                                        options={this.City1Fun()}
+                                                                    />
+                                                                </div>
+
+                                                            </Col>
+                                                        </Row>
+
+                                                        <div id='labelUpInputCarDas'>الصور</div>
+
+                                                        <Row style={{ marginBottom: 80 }}>
+                                                            <Col sm={12} md={6} lg={4}>
+                                                                <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
+                                                                    onChange={(img) => { this.setState({ imgCar1: img }) }} />
+                                                            </Col>
+
+                                                            <Col sm={12} md={6} lg={4}>
+                                                                <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
+                                                                    onChange={(img) => { this.setState({ imgCar2: img, imgCar2Length: img.length }) }} />
+                                                            </Col>
+
+                                                            <Col sm={12} md={6} lg={4}>
+                                                                <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
+                                                                    onChange={(img) => { this.setState({ imgCar3: img, imgCar3Length: img.length }) }} />
+                                                            </Col>
+
+                                                            <Col sm={12} md={6} lg={4}>
+                                                                <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
+                                                                    onChange={(img) => { this.setState({ imgCar4: img, imgCar4Length: img.length }) }} />
+                                                            </Col>
+
+                                                            <Col sm={12} md={6} lg={4}>
+                                                                <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
+                                                                    onChange={(img) => { this.setState({ imgCar5: img, imgCar5Length: img.length }) }} />
+                                                            </Col>
+
+                                                            <Col sm={12} md={6} lg={4}>
+                                                                <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
+                                                                    onChange={(img) => { this.setState({ imgCar6: img, imgCar6Length: img.length }) }} />
+                                                            </Col>
+
+                                                            <Col sm={12} md={6} lg={4}>
+                                                                <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
+                                                                    onChange={(img) => { this.setState({ imgCar7: img, imgCar7Length: img.length }) }} />
+                                                            </Col>
+
+                                                            <Col sm={12} md={6} lg={4}>
+                                                                <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
+                                                                    onChange={(img) => { this.setState({ imgCar8: img, imgCar8Length: img.length }) }} />
+                                                            </Col>
+
+                                                            <Col sm={12} md={6} lg={4}>
+                                                                <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
+                                                                    onChange={(img) => { this.setState({ imgCar9: img, imgCar9Length: img.length }) }} />
+                                                            </Col>
+
+                                                            <Col sm={12} md={6} lg={4}>
+                                                                <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
+                                                                    onChange={(img) => { this.setState({ imgCar10: img, imgCar10Length: img.length }) }} />
+                                                            </Col>
+
+                                                            <Col sm={12} md={6} lg={4}>
+                                                                <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
+                                                                    onChange={(img) => { this.setState({ imgCar11: img, imgCar11Length: img.length }) }} />
+                                                            </Col>
+
+                                                            <Col sm={12} md={6} lg={4}>
+                                                                <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
+                                                                    onChange={(img) => { this.setState({ imgCar12: img, imgCar12Length: img.length }) }} />
+                                                            </Col>
+
+                                                        </Row>
+                                                        <div id='btnSaveAddContiner'>
+                                                            <div onClick={() => this.AddCar(ctx.value.user.id)} id='btnSaveAdd'>حقظ</div>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            )
+
+                                    )}
+                            </div>
                             <Footer />
                             <ToastContainer
                                 position="bottom-center"
@@ -744,10 +752,10 @@ class Add extends React.Component {
                                                 <p id='ConfirmTXT'>تمت الاضافة بنجاح تتم الان مراجعة الاعلان والموافقة قريبا</p>
                                                 <div id='BTNDialogeMSGContiner'>
                                                     <Link to='/'>
-                                                    <div id='BTnNext1'>الرئيسية</div>
+                                                        <div id='BTnNext1'>الرئيسية</div>
                                                     </Link>
                                                     <Link to='/myads'>
-                                                    <div id='BTnNext1'>اعلاناتي</div>
+                                                        <div id='BTnNext1'>اعلاناتي</div>
                                                     </Link>
                                                 </div>
                                             </div>
