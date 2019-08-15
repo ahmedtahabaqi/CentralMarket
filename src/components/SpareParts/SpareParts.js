@@ -58,7 +58,7 @@ class SpareParts extends Component {
                                                         <div id='CarspairImgContiner'>
                                                             <img src={host + part.image + '.png'} id='CarspairImg' alt='img' />
                                                         </div>
-                                                        <div id='opacitySpareParttitle' />
+                                                        {/* <div id='opacitySpareParttitle' /> */}
                                                         <div id='SpareParttitle'> {part.name} </div>
                                                         <div id='contentCardspairs'>
                                                             <div id='contentCardspairs1'>

@@ -9,8 +9,9 @@
 #SpareParttitle{
     width: 300px;
     height: 40px;
-    position: absolute;
-    margin-top: -40px;
+    /* position: absolute; */
+    /* margin-top: -40px; */
+    background-color: #0A3D62;
     color: #fff;
     display: flex;
     align-items: center;
@@ -75,8 +76,9 @@
 .flip-card {
     background-color: transparent;
     width: 300px;
-    height: 300px;
+    height: 367px;
     perspective: 1000px;
+    border-radius: 10px;
   }
   
   .flip-card-inner {
@@ -87,6 +89,7 @@
     transition: transform 0.6s;
     transform-style: preserve-3d;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 10px;
   }
   
   .flip-card:hover .flip-card-inner {
@@ -103,12 +106,13 @@
   .flip-card-front {
     background-color: #bbb;
     color: black;
+    border-radius: 10px;
   }
   
   .flip-card-back {
       padding: 20px;
       font-size: 18px;
-      height: 330px;
+      height: 367px;
     background-color: #0A3D62;
     color: #E4BE6D;
     transform: rotateY(180deg);
