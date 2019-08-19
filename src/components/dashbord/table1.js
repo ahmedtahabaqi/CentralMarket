@@ -28,7 +28,7 @@ class Table1 extends React.Component {
             windoSelect: '', AirBag: '', Color: '', description: '', NameUser: '', PhoneInput: '', Cityinput: '', City1input: '', gallerySelect: '',
             imgCar1: [], imgCar2: [], imgCar3: [], imgCar4: [], imgCar5: [], imgCar6: [], imgCar7: [], imgCar8: [], imgCar9: [], imgCar10: [], imgCar11: [], imgCar12: [],
             imgCar2Length: '', imgCar3Length: '', imgCar4Length: '', imgCar5Length: '', imgCar6Length: '', imgCar7Length: '', imgCar8Length: '', imgCar9Length: '', imgCar10Length: '', imgCar11Length: '', imgCar12Length: '',
-            cars: [], gallery: [],test:true,idCarToIMG:'',
+            cars: [], gallery: [], test: true, idCarToIMG: '',
         }
     }
     componentDidMount() {
@@ -93,15 +93,15 @@ class Table1 extends React.Component {
         formData.append("storeId", this.state.gallerySelect);
         formData.append("active", 'true');
         formData.append("isRent", 'false');
-        formData.append("isImported",'false');
+        formData.append("isImported", 'false');
         formData.append("image", this.state.imgCar1[0]);
 
         axios({ url: host + "dash/v1/car/add", method: "POST", data: formData, headers: header })
             .then(response => {
                 if (response.status === 200) {
                     console.log(response.data.data.id);
-                    this.setState({idCarToIMG:response.data.data.id,test:false})
-                 
+                    this.setState({ idCarToIMG: response.data.data.id, test: false })
+
                     toast('تمت الاضافة بنجاح', {
                         position: "bottom-center",
                         autoClose: 5000,
@@ -126,30 +126,30 @@ class Table1 extends React.Component {
 
             });
     }
-    
+
     AddImageToCar(id) {
         var { imgCar2, imgCar3, imgCar4, imgCar5, imgCar6, imgCar7, imgCar8, imgCar9, imgCar10, imgCar11, imgCar12 } = this.state
         var { imgCar2Length, imgCar3Length, imgCar4Length, imgCar5Length, imgCar6Length, imgCar7Length, imgCar8Length, imgCar9Length, imgCar10Length, imgCar11Length, imgCar12Length } = this.state
         let formData = new FormData();
         formData.append("id", id);
-        if (imgCar2Length > 0) {  formData.append('image0',imgCar2[0]); }
-        if (imgCar3Length > 0) { formData.append('image1',imgCar3[0]); }
-        if (imgCar4Length > 0) { formData.append('image2',imgCar4[0]); }
-        if (imgCar5Length > 0) { formData.append('image3',imgCar5[0]); }
-        if (imgCar6Length > 0) { formData.append('image4',imgCar6[0]); }
-        if (imgCar7Length > 0) { formData.append('image5',imgCar7[0]); }
-        if (imgCar8Length > 0) { formData.append('image6',imgCar8[0]); }
-        if (imgCar9Length > 0) { formData.append('image7',imgCar9[0]); }
-        if (imgCar10Length> 0) { formData.append('image8',imgCar10[0]);}
-        if (imgCar11Length> 0) { formData.append('image9',imgCar11[0]);}
-        if (imgCar12Length> 0){ formData.append('image10',imgCar12[0]);}
-      
+        if (imgCar2Length > 0) { formData.append('image0', imgCar2[0]); }
+        if (imgCar3Length > 0) { formData.append('image1', imgCar3[0]); }
+        if (imgCar4Length > 0) { formData.append('image2', imgCar4[0]); }
+        if (imgCar5Length > 0) { formData.append('image3', imgCar5[0]); }
+        if (imgCar6Length > 0) { formData.append('image4', imgCar6[0]); }
+        if (imgCar7Length > 0) { formData.append('image5', imgCar7[0]); }
+        if (imgCar8Length > 0) { formData.append('image6', imgCar8[0]); }
+        if (imgCar9Length > 0) { formData.append('image7', imgCar9[0]); }
+        if (imgCar10Length > 0) { formData.append('image8', imgCar10[0]); }
+        if (imgCar11Length > 0) { formData.append('image9', imgCar11[0]); }
+        if (imgCar12Length > 0) { formData.append('image10', imgCar12[0]); }
+
 
         axios({ url: host + "dash/v1/car/image", method: "POST", data: formData, headers: header })
             .then(response => {
                 if (response.status === 200) {
-                console.log('ok');
-                
+                    console.log('ok');
+
                     toast('تمت الاضافة بنجاح', {
                         position: "bottom-center",
                         autoClose: 5000,
@@ -273,10 +273,10 @@ class Table1 extends React.Component {
         formData.append("seats", 'numSets');
         formData.append("type", this.state.TypeSetsSelect);
         formData.append("window", 'windoSelect');
-        formData.append("airBags",'AirBag');
+        formData.append("airBags", 'AirBag');
         formData.append("color", this.state.color);
         formData.append("description", this.state.description);
-        formData.append("name",'NameUser');
+        formData.append("name", 'NameUser');
         formData.append("phone", this.state.PhoneInput);
         formData.append("location", this.state.Cityinput);
         formData.append("state", this.state.City1input);
@@ -366,11 +366,20 @@ class Table1 extends React.Component {
         }
         return arr
     }
+    YEAR() {
+        var year = new Date().getFullYear();
+        var arr = [{ value: "سنة الصنع ", label: "سنة الصنع " }];
+        for (let i = year + 1; i > 1939; i--) {
+            arr.push(
+                { value: i, label: i }
+            )
+        }
+        return arr;
+    }
     render() {
-        if(!this.state.test)
-        {
+        if (!this.state.test) {
             this.AddImageToCar(this.state.idCarToIMG)
-            this.setState({test:true})
+            this.setState({ test: true })
         }
         return (
             <Context.Consumer>
@@ -397,7 +406,7 @@ class Table1 extends React.Component {
 
                                                     <Row>
                                                         <Col md={12}>
-                                                            <input autoComplete='off' autoFocus={true}  type='text' placeholder='العنوان' id='InputTExtDash1'
+                                                            <input autoComplete='off' autoFocus={true} type='text' placeholder='العنوان' id='InputTExtDash1'
                                                                 onChange={(e) => this.setState({ mainTitleinput: e.target.value })} />
                                                         </Col>
                                                     </Row>
@@ -499,51 +508,18 @@ class Table1 extends React.Component {
 
                                                     <Row>
                                                         <Col md={12} lg={6}>
-                                                            <Form.Group style={{ direction: 'rtl' }} >
-                                                                <Form.Control as="select" id='InputTExtDash'
-                                                                    onChange={(even) => {
-                                                                        if (even.target.value !== 'Select') {
-                                                                            this.setState({ YearSelect: even.target.value })
+
+                                                            <div id='InputTExtDash'>
+                                                                <Select
+                                                                    onChange={(e) => {
+                                                                        if (e.value !== "سنة الصنع ") {
+                                                                            this.setState({ YearSelect: e.value })
                                                                         }
-                                                                    }}>
-                                                                    <option value="Select">سنة الصنع</option>
-
-                                                                    <option value='1990' >1990</option>
-                                                                    <option value='1991' >1991</option>
-                                                                    <option value='1992' >1992</option>
-                                                                    <option value='1993' >1993</option>
-                                                                    <option value='1994' >1994</option>
-                                                                    <option value='1995' >1995</option>
-                                                                    <option value='1996' >1996</option>
-                                                                    <option value='1997' >1997</option>
-                                                                    <option value='1998' >1998</option>
-                                                                    <option value='1999' >1999</option>
-                                                                    <option value='2000' >2000</option>
-                                                                    <option value='2001' >2001</option>
-                                                                    <option value='2002' >2002</option>
-                                                                    <option value='2003' >2003</option>
-                                                                    <option value='2004' >2004</option>
-                                                                    <option value='2005' >2005</option>
-                                                                    <option value='2006' >2006</option>
-                                                                    <option value='2007' >2007</option>
-                                                                    <option value='2008' >2008</option>
-                                                                    <option value='2009' >2009</option>
-                                                                    <option value='2010' >2010</option>
-                                                                    <option value='2011' >2011</option>
-                                                                    <option value='2012' >2012</option>
-                                                                    <option value='2013' >2013</option>
-                                                                    <option value='2014' >2014</option>
-                                                                    <option value='2015' >2015</option>
-                                                                    <option value='2016' >2016</option>
-                                                                    <option value='2017' >2017</option>
-                                                                    <option value='2018' >2018</option>
-                                                                    <option value='2019' >2019</option>
-                                                                    <option value='2020' >2020</option>
-                                                                    <option value='2021' >2021</option>
-
-                                                                </Form.Control>
-
-                                                            </Form.Group>
+                                                                    }}
+                                                                    defaultValue={this.YEAR()[0]}
+                                                                    options={this.YEAR()}
+                                                                />
+                                                            </div>
                                                         </Col>
                                                         <Col md={12} lg={6}>
                                                             <Form.Group style={{ direction: 'rtl' }} >
@@ -955,7 +931,7 @@ class Table1 extends React.Component {
                                                                     <div id='labelUpInputCarDas'>العنوان الرئيسي</div>
                                                                     <Row>
                                                                         <Col md={12}>
-                                                                            <input autoComplete='off' autoFocus={true}  value={this.state.mainTitleinput} type='text' placeholder='العنوان' id='InputTExtDash1'
+                                                                            <input autoComplete='off' autoFocus={true} value={this.state.mainTitleinput} type='text' placeholder='العنوان' id='InputTExtDash1'
                                                                                 onChange={(e) => this.setState({ mainTitleinput: e.target.value })} />
                                                                         </Col>
                                                                     </Row>
@@ -1060,51 +1036,17 @@ class Table1 extends React.Component {
 
                                                                     <Row>
                                                                         <Col md={12} lg={6}>
-                                                                            <Form.Group style={{ direction: 'rtl' }} >
-                                                                                <Form.Control as="select" id='InputTExtDash'
-                                                                                    onChange={(even) => {
-                                                                                        if (even.target.value !== 'Select') {
-                                                                                            this.setState({ YearSelect: even.target.value })
+                                                                            <div id='InputTExtDash'>
+                                                                                <Select
+                                                                                    onChange={(e) => {
+                                                                                        if (e.value !== "سنة الصنع ") {
+                                                                                            this.setState({ YearSelect: e.value })
                                                                                         }
-                                                                                    }}>
-                                                                                    <option value={this.state.YearSelect}>سنة الصنع</option>
-
-                                                                                    <option value='1990' >1990</option>
-                                                                                    <option value='1991' >1991</option>
-                                                                                    <option value='1992' >1992</option>
-                                                                                    <option value='1993' >1993</option>
-                                                                                    <option value='1994' >1994</option>
-                                                                                    <option value='1995' >1995</option>
-                                                                                    <option value='1996' >1996</option>
-                                                                                    <option value='1997' >1997</option>
-                                                                                    <option value='1998' >1998</option>
-                                                                                    <option value='1999' >1999</option>
-                                                                                    <option value='2000' >2000</option>
-                                                                                    <option value='2001' >2001</option>
-                                                                                    <option value='2002' >2002</option>
-                                                                                    <option value='2003' >2003</option>
-                                                                                    <option value='2004' >2004</option>
-                                                                                    <option value='2005' >2005</option>
-                                                                                    <option value='2006' >2006</option>
-                                                                                    <option value='2007' >2007</option>
-                                                                                    <option value='2008' >2008</option>
-                                                                                    <option value='2009' >2009</option>
-                                                                                    <option value='2010' >2010</option>
-                                                                                    <option value='2011' >2011</option>
-                                                                                    <option value='2012' >2012</option>
-                                                                                    <option value='2013' >2013</option>
-                                                                                    <option value='2014' >2014</option>
-                                                                                    <option value='2015' >2015</option>
-                                                                                    <option value='2016' >2016</option>
-                                                                                    <option value='2017' >2017</option>
-                                                                                    <option value='2018' >2018</option>
-                                                                                    <option value='2019' >2019</option>
-                                                                                    <option value='2020' >2020</option>
-                                                                                    <option value='2021' >2021</option>
-
-                                                                                </Form.Control>
-
-                                                                            </Form.Group>
+                                                                                    }}
+                                                                                    defaultValue={this.state.YearSelect}
+                                                                                    options={this.YEAR()}
+                                                                                />
+                                                                            </div>
                                                                         </Col>
                                                                         <Col md={12} lg={6}>
                                                                             <Form.Group style={{ direction: 'rtl' }} >
@@ -1368,67 +1310,67 @@ class Table1 extends React.Component {
 
                                                                     <div id='labelUpInputCarDas'>الصور</div>
                                                                     <Row>
-                                                        <Col md={12}>
-                                                            <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
-                                                                onChange={(img) => { this.setState({ imgCar1: img }) }} />
-                                                        </Col>
+                                                                        <Col md={12}>
+                                                                            <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
+                                                                                onChange={(img) => { this.setState({ imgCar1: img }) }} />
+                                                                        </Col>
 
-                                                        <Col md={12}>
-                                                            <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
-                                                                onChange={(img) => { this.setState({ imgCar2: img, imgCar2Length: img.length }) }} />
-                                                        </Col>
+                                                                        <Col md={12}>
+                                                                            <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
+                                                                                onChange={(img) => { this.setState({ imgCar2: img, imgCar2Length: img.length }) }} />
+                                                                        </Col>
 
-                                                        <Col md={12}>
-                                                            <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
-                                                                onChange={(img) => { this.setState({ imgCar3: img, imgCar3Length: img.length }) }} />
-                                                        </Col>
+                                                                        <Col md={12}>
+                                                                            <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
+                                                                                onChange={(img) => { this.setState({ imgCar3: img, imgCar3Length: img.length }) }} />
+                                                                        </Col>
 
-                                                        <Col md={12}>
-                                                            <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
-                                                                onChange={(img) => { this.setState({ imgCar4: img, imgCar4Length: img.length }) }} />
-                                                        </Col>
+                                                                        <Col md={12}>
+                                                                            <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
+                                                                                onChange={(img) => { this.setState({ imgCar4: img, imgCar4Length: img.length }) }} />
+                                                                        </Col>
 
-                                                        <Col md={12}>
-                                                            <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
-                                                                onChange={(img) => { this.setState({ imgCar5: img, imgCar5Length: img.length }) }} />
-                                                        </Col>
+                                                                        <Col md={12}>
+                                                                            <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
+                                                                                onChange={(img) => { this.setState({ imgCar5: img, imgCar5Length: img.length }) }} />
+                                                                        </Col>
 
-                                                        <Col md={12}>
-                                                            <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
-                                                                onChange={(img) => { this.setState({ imgCar6: img, imgCar6Length: img.length }) }} />
-                                                        </Col>
+                                                                        <Col md={12}>
+                                                                            <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
+                                                                                onChange={(img) => { this.setState({ imgCar6: img, imgCar6Length: img.length }) }} />
+                                                                        </Col>
 
-                                                        <Col md={12}>
-                                                            <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
-                                                                onChange={(img) => { this.setState({ imgCar7: img, imgCar7Length: img.length }) }} />
-                                                        </Col>
+                                                                        <Col md={12}>
+                                                                            <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
+                                                                                onChange={(img) => { this.setState({ imgCar7: img, imgCar7Length: img.length }) }} />
+                                                                        </Col>
 
-                                                        <Col md={12}>
-                                                            <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
-                                                                onChange={(img) => { this.setState({ imgCar8: img, imgCar8Length: img.length }) }} />
-                                                        </Col>
+                                                                        <Col md={12}>
+                                                                            <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
+                                                                                onChange={(img) => { this.setState({ imgCar8: img, imgCar8Length: img.length }) }} />
+                                                                        </Col>
 
-                                                        <Col md={12}>
-                                                            <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
-                                                                onChange={(img) => { this.setState({ imgCar9: img, imgCar9Length: img.length }) }} />
-                                                        </Col>
+                                                                        <Col md={12}>
+                                                                            <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
+                                                                                onChange={(img) => { this.setState({ imgCar9: img, imgCar9Length: img.length }) }} />
+                                                                        </Col>
 
-                                                        <Col md={12}>
-                                                            <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
-                                                                onChange={(img) => { this.setState({ imgCar10: img, imgCar10Length: img.length }) }} />
-                                                        </Col>
+                                                                        <Col md={12}>
+                                                                            <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
+                                                                                onChange={(img) => { this.setState({ imgCar10: img, imgCar10Length: img.length }) }} />
+                                                                        </Col>
 
-                                                        <Col md={12}>
-                                                            <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
-                                                                onChange={(img) => { this.setState({ imgCar11: img, imgCar11Length: img.length }) }} />
-                                                        </Col>
+                                                                        <Col md={12}>
+                                                                            <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
+                                                                                onChange={(img) => { this.setState({ imgCar11: img, imgCar11Length: img.length }) }} />
+                                                                        </Col>
 
-                                                        <Col md={12}>
-                                                            <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
-                                                                onChange={(img) => { this.setState({ imgCar12: img, imgCar12Length: img.length }) }} />
-                                                        </Col>
+                                                                        <Col md={12}>
+                                                                            <FilePicker multiple width={'90%'} height={40} marginLeft={'5%'} marginRight={'5%'} marginTop={10}
+                                                                                onChange={(img) => { this.setState({ imgCar12: img, imgCar12Length: img.length }) }} />
+                                                                        </Col>
 
-                                                    </Row>
+                                                                    </Row>
 
                                                                 </div>
 
@@ -1452,7 +1394,7 @@ class Table1 extends React.Component {
                                     )}
                                 </Table.Body>
                             </Table>
-                          
+
                             <ToastContainer
                                 position="bottom-center"
                                 autoClose={5000}

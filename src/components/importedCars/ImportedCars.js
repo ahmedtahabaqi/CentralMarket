@@ -70,7 +70,7 @@ class ImportedCars extends Component {
                         </div>
                         <Link to={'/transaction/' + car.id}>
                           <div style={{ cursor: 'pointer', color: '#000' }}>
-                            <span>{car.name}</span>
+                            <span>{car.title}</span>
                           </div>
                         </Link>
                       </div>
