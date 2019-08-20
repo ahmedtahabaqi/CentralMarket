@@ -27,7 +27,6 @@ class ContactUs extends Component {
                         <p style={{ fontWeight: 600 }}>للاستفسار او للمساعدة الفنية اتصل على</p>
                         <br />
                         <p>0781 000 6405</p>
-                        <p>0771 460 1419</p>
                         <p>Central.marketiq@gmail.com</p>
 
                     </div>

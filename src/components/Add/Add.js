@@ -262,7 +262,6 @@ class Add extends React.Component {
                                                     <br />
                                                     <p>للاستفسار او للمساعدة الفنية اتصل على</p>
                                                     <p>  0781 000 6405</p>
-                                                    <p>0771 460 1419</p>
                                                     <p>Central.marketiq@gmail.com</p>
                                                 </div>
 

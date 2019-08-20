@@ -83,7 +83,7 @@ class Table1 extends React.Component {
         formData.append("airBags", 'AirBag');
         formData.append("name", 'NameUser');
         formData.append("color", this.state.color);
-        formData.append("description", this.state.description);
+        formData.append("description", this.state.description||" ");
 
         formData.append("phone", this.state.PhoneInput);
         formData.append("location", this.state.Cityinput);

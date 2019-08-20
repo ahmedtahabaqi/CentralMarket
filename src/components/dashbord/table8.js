@@ -88,9 +88,11 @@ class Table8 extends React.Component {
         formData.append("phone", 'none');
         formData.append("location", 'none');
         formData.append("state", this.state.title);
-        formData.append("title", 'none');
+        // formData.append("title", 'none');
+        formData.append("name", 'none');
         formData.append("storeId", this.state.gallerySelect);
         formData.append("image", this.state.imgBanner[0]);
+
 
         axios({ url: host + "dash/v1/banner/add", method: "POST", data: formData, headers: header })
             .then(response => {
@@ -126,9 +128,10 @@ class Table8 extends React.Component {
         formData.append("phone", 'none');
         formData.append("location", 'none');
         formData.append("state", this.state.title);
-        formData.append("title", 'none');
+        // formData.append("title", 'none');
         formData.append("storeId", this.state.gallerySelect);
         formData.append("image", this.state.imgBanner[0]);
+        formData.append("name", 'none');
         formData.append("id", id);
         axios({ url: host + "dash/v1/banner/edit", method: "PUT", data: formData, headers: header })
             .then(response => {
